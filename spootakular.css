@@ -1,0 +1,172 @@
+:root {
+    --dark-bg: #000000;
+    --ghost: #fff;
+    --alert: #FF0000;
+    --orange: #FF7518;
+    --green: #228B22;
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--ghost);
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Creepster', cursive;
+    color: var(--orange);
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 60%;
+    background-color: #111;
+    color: var(--ghost);
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #222;
+}
+
+tr:hover {
+    background-color: #333;
+}
+
+footer {
+    text-align: center;
+    margin: 20px;
+}
+
+footer a {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Pages */
+.page { display: none; padding: 20px; }
+.page:target { display: block; }
+
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav a {
+    margin: 0 10px;
+    color: var(--orange);
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+nav a:hover, nav a:focus {
+    background: var(--orange);
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+}
+
+/* Office / Animatronics */
+.office-bg {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    margin: 20px auto;
+    background: url("Images/fnaf.jpg") no-repeat center center fixed;
+    border: 2px solid var(--ghost);
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.animatronic {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    opacity: 0.5;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+/* Freddy movement */
+@keyframes freddy-move {
+    0%, 100% { left: 0; opacity: 0.3; }
+    50% { left: 200px; opacity: 1; }
+}
+
+.freddy { animation: freddy-move 8s infinite; }
+
+.animatronic:hover { transform: scale(1.1); opacity: 1; }
+
+/* Lights / doors */
+.light-btn, .door-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 5px 10px;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    cursor: pointer;
+    background: #111;
+    color: var(--orange);
+    transition: background 0.2s;
+}
+
+.light-btn:hover, .door-btn:hover {
+    background: var(--orange);
+    color: var(--dark-bg);
+}
+
+input[type="checkbox"] { display: none; }
+
+#left-light:checked ~ .office-bg { filter: brightness(1.5); }
+#right-light:checked ~ .office-bg { filter: brightness(1.5); }
+#left-door:checked ~ .office-bg .freddy { transform: translateX(-100px) scale(1); }
+
+/* Power Meter */
+.power-meter {
+    width: 150px;
+    height: 20px;
+    border: 2px solid var(--ghost);
+    margin: 20px auto;
+}
+
+.power-fill {
+    width: 100%;
+    height: 100%;
+    background: var(--orange);
+    animation: drain 60s linear infinite;
+}
+
+@keyframes drain {
+    0% { width: 100%; }
+    100% { width: 0%; }
+}
+
+.office-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centers horizontally */
+    justify-content: center; /* centers vertically */
+    min-height: 100vh;     /* makes container fill screen height */
+    text-align: center;
+}
+
+.office-image {
+    max-width: 80%;   /* keeps image from overflowing */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
