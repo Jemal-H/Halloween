@@ -1,72 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
-   
     <title>CSS Coding Challenge #1</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        h1 {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        table {
-            margin: 20px auto;
-            border-collapse: collapse;
-            width: 50%;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #f9f9f9;
-        }
-    </style>
+    <link rel="stylesheet" href="spooktacular.css">
 </head>
 <body>
     <h1>CSS Coding Challenge #1</h1>
+    <body>
+    <h1>CSS Coding Challenge #1 - FNAF Night 1</h1>
+
     <table>
         <thead>
             <tr>
                 <th>Team Member Names</th>
                 <th>Secret Code</th>
-				
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Team Member: First N: Last N: </td>
-				<td>TBA</td>
-             
+                <td>Team Member: First N: Last N:</td>
+                <td>TBA</td>
             </tr>
             <tr>
-                <td>Team Member: First N: Last N: </td>
-				<td>&nbsp;</td>
-               
+                <td>Team Member: First N: Last N:</td>
+                <td>&nbsp;</td>
             </tr>
-            
         </tbody>
     </table>
-	 <footer>
+
+    <nav>
+        <a href="#office">Office</a>
+        <a href="#hallway">Hallway</a>
+        <a href="#showstage">Show Stage</a>
+    </nav>
+
+    
+    <section id="office" class="page">
+        <h2 style="text-align:center;">Office Camera</h2>
+        <div class="office-bg">
+            <img src="assets/images/freddy.png" class="animatronic freddy" alt="Freddy">
+        </div>
+    </section>
+
+
+    <section id="hallway" class="page">
+        <h2 style="text-align:center;">Hallway Camera</h2>
+        <div class="office-bg">
+            <img src="assets/images/bonnie.png" class="animatronic" alt="Bonnie">
+        </div>
+    </section>
+
+    <section id="showstage" class="page">
+        <h2 style="text-align:center;">Show Stage</h2>
+        <div class="office-bg">
+            <img src="assets/images/chica.png" class="animatronic" alt="Chica">
+        </div>
+    </section>
+
+    <div class="power-meter">
+        <div class="power-fill"></div>
+    </div>
+
+    <footer>
         <a href="demonstration.html">Here is my demonstration</a>
     </footer>
-	
 </body>
+
 </html>
